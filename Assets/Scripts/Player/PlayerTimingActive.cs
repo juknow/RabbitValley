@@ -35,6 +35,14 @@ public class PlayerTimingActive : MonoBehaviour
             cultivation = true;
         }
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (!DataManager.Instance.GreatTrigger && other.CompareTag("Crop"))
+        {
+            cultivation = true;
+        }
+    }
     void OnTriggerExit2D(Collider2D other)
     {
         // 플레이어가 트리거 영역에 들어왔을 때 

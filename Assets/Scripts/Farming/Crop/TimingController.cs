@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class TimingController : MonoBehaviour
 {
+
+    public GameObject spawnObject;
     private Vector3 move;
     private float speed = 1f; // 초기 속도
     private float acceleration = 0.01f; // 가속도
