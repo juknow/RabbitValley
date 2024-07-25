@@ -7,18 +7,42 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 public class PlayerTimingActive : MonoBehaviour
 {
-    public GameObject timingBar;
-    public GameObject spawnObject;
+    public GameObject timingBar, spawnObject, cultivationText, sayGreatThing;
     private bool cultivation;
+
 
     void Start()
     {
+        cultivationText.SetActive(false);
         DataManager.Instance.GreatTrigger = false;
         cultivation = false;
     }
 
+    private IEnumerator DestroyAfterDelay(GameObject obj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(obj);
+    }
+
     void Update()
     {
+        if (DataManager.Instance.SayGreat)
+        {
+            GameObject instantiatedObject = Instantiate(sayGreatThing, spawnObject.transform.position, Quaternion.Euler(0, 0, -90));
+            StartCoroutine(DestroyAfterDelay(instantiatedObject, 1f));
+            DataManager.Instance.SayGreat = false;
+            Debug.Log(DataManager.Instance.SayGreat);
+
+
+        }
+        if (cultivation)
+        {
+            cultivationText.SetActive(true);
+        }
+        else
+        {
+            cultivationText.SetActive(false);
+        }
         if (!DataManager.Instance.GreatTrigger && cultivation && Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(timingBar, spawnObject.transform.position, quaternion.identity);

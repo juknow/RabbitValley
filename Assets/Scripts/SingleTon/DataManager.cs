@@ -8,7 +8,7 @@ public class DataManager : MonoBehaviour
     public static DataManager Instance { get; private set; }
     private int cropLevel;
     private int greatLevel;
-    private bool greatTrigger;
+    private bool greatTrigger, sayGreat;
 
     // getset 에 접근하게 해주는 프로퍼티
 
@@ -28,6 +28,13 @@ public class DataManager : MonoBehaviour
         get { return greatTrigger; }
         set { greatTrigger = value; }
     }
+
+    public bool SayGreat
+    {
+        get { return sayGreat; }
+        set { sayGreat = value; }
+    }
+
 
 
     // Optional: Add any additional methods or functionality here

@@ -26,6 +26,9 @@ public class TimingController : MonoBehaviour
             {
                 Debug.Log("정확함!");
                 DataManager.Instance.GreatLevel++;
+                DataManager.Instance.SayGreat = true;
+                Debug.Log(DataManager.Instance.SayGreat);
+
             }
             else
             {
