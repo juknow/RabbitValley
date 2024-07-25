@@ -33,6 +33,7 @@ public class TimingController : MonoBehaviour
             else
             {
                 Debug.Log("안정확함!");
+                DataManager.Instance.SayClose = true;
             }
 
             DataManager.Instance.CropLevel++;
@@ -53,6 +54,7 @@ public class TimingController : MonoBehaviour
         {
             Debug.Log("안정확함!");
             DataManager.Instance.CropLevel++;
+            DataManager.Instance.SayClose = true;
             DataManager.Instance.GreatTrigger = false;
             good = false;
             Destroy(gameObject.transform.parent.gameObject);

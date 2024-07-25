@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 public class PlayerTimingActive : MonoBehaviour
 {
-    public GameObject timingBar, spawnObject, cultivationText, sayGreatThing;
+    public GameObject timingBar, spawnObject, cultivationText, sayGreatThing, sayCloseThing;
     private bool cultivation;
 
 
@@ -31,7 +31,14 @@ public class PlayerTimingActive : MonoBehaviour
             GameObject instantiatedObject = Instantiate(sayGreatThing, spawnObject.transform.position, Quaternion.Euler(0, 0, -90));
             StartCoroutine(DestroyAfterDelay(instantiatedObject, 1f));
             DataManager.Instance.SayGreat = false;
-            Debug.Log(DataManager.Instance.SayGreat);
+
+
+        }
+        if (DataManager.Instance.SayClose)
+        {
+            GameObject instantiatedObject = Instantiate(sayCloseThing, spawnObject.transform.position, Quaternion.Euler(0, 0, -90));
+            StartCoroutine(DestroyAfterDelay(instantiatedObject, 1f));
+            DataManager.Instance.SayClose = false;
 
 
         }

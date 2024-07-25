@@ -3644,6 +3644,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2001904005}
     - target: {fileID: 9068102246215299916, guid: 14080606ff8398045ab106533d38216f, type: 3}
+      propertyPath: sayCloseThing
+      value: 
+      objectReference: {fileID: 8997556191762121825, guid: 08b89caf58b69364db565b01f7bdfc34, type: 3}
+    - target: {fileID: 9068102246215299916, guid: 14080606ff8398045ab106533d38216f, type: 3}
       propertyPath: sayGreatThing
       value: 
       objectReference: {fileID: 8997556191762121825, guid: 6a0652a63c8e411458b62816383ca0ce, type: 3}
