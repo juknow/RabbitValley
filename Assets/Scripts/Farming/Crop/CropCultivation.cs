@@ -6,11 +6,10 @@ using UnityEngine.UI;
 
 public class CropCultivation : MonoBehaviour
 {
-    private GameObject crop, seed, stem, sprout_1, sprout_2, baby_1, baby_2, complete;
-    private bool playerInTrigger = false;
-
+    private GameObject seed, stem, sprout_1, sprout_2, baby_1, baby_2, complete;
     void Start()
     {
+        DataManager.Instance.GreatLevel = 0;
         DataManager.Instance.CropLevel = 0;
         // 자식 오브젝트 찾기
         seed = transform.Find("seed").gameObject;
@@ -33,12 +32,6 @@ public class CropCultivation : MonoBehaviour
 
     void Update()
     {
-        // 플레이어가 트리거 안에 있을 때 스페이스바를 누르면 작동
-        if ((!DataManager.Instance.GreatTrigger) && playerInTrigger && Input.GetKeyDown(KeyCode.Space))
-        {
-            DataManager.Instance.GreatTrigger = true;
-            playerInTrigger = false;
-        }
         switch (DataManager.Instance.CropLevel)
         {
             case (0):
@@ -113,25 +106,9 @@ public class CropCultivation : MonoBehaviour
                 baby_2.SetActive(true);
                 complete.SetActive(true);
                 DataManager.Instance.CropLevel = 0;
+                DataManager.Instance.GreatLevel = 0;
                 break;
         }
     }
-    void OnTriggerStay2D(Collider2D other)
-    {
-        // 플레이어가 트리거 영역에 들어왔을 때
-        if (!DataManager.Instance.GreatTrigger && other.CompareTag("Player"))
-        {
-            playerInTrigger = true;
-        }
-    }
 
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        // 플레이어가 트리거 영역을 나갔을 때
-        if (other.CompareTag("Player"))
-        {
-            playerInTrigger = false;
-        }
-    }
 }
