@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CropCultivation : MonoBehaviour
 {
@@ -33,9 +34,10 @@ public class CropCultivation : MonoBehaviour
     void Update()
     {
         // 플레이어가 트리거 안에 있을 때 스페이스바를 누르면 작동
-        if (playerInTrigger && Input.GetKeyDown(KeyCode.Space))
+        if ((!DataManager.Instance.GreatTrigger) && playerInTrigger && Input.GetKeyDown(KeyCode.Space))
         {
-            DataManager.Instance.CropLevel++;
+            DataManager.Instance.GreatTrigger = true;
+            playerInTrigger = false;
         }
         switch (DataManager.Instance.CropLevel)
         {
@@ -114,14 +116,15 @@ public class CropCultivation : MonoBehaviour
                 break;
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         // 플레이어가 트리거 영역에 들어왔을 때
-        if (other.CompareTag("Player"))
+        if (!DataManager.Instance.GreatTrigger && other.CompareTag("Player"))
         {
             playerInTrigger = true;
         }
     }
+
 
     void OnTriggerExit2D(Collider2D other)
     {
