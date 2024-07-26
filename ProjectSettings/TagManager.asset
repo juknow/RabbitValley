@@ -8,6 +8,8 @@ TagManager:
   - Timing
   - Bad
   - Wall
+  - Bed
+  - Portal
   layers:
   - Default
   - TransparentFX
