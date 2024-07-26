@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class ValleyPlayerMovement : MonoBehaviour
 {
 
 
@@ -47,13 +47,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Portal"))
         {
-            SceneManager.LoadScene("Valley");
+            SceneManager.LoadScene("Out");
         }
-        if (other.name == "Door")
-        {
-            SceneManager.LoadScene("Home");
-        }
-
     }
 
 

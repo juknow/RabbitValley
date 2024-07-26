@@ -1831,7 +1831,7 @@ GameObject:
   - component: {fileID: 2087845828}
   m_Layer: 0
   m_Name: Portal
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2026,8 +2026,8 @@ GameObject:
   - component: {fileID: 8497161118380631918}
   - component: {fileID: 8800703413080398616}
   - component: {fileID: 5848435825009177859}
-  - component: {fileID: 5879363728094321552}
   - component: {fileID: 6148313670400582732}
+  - component: {fileID: 8800703413080398617}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2386,18 +2386,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.87353516, y: 1.5741577}
   m_EdgeRadius: 0
---- !u!114 &5879363728094321552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2449886740155447048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 395ab25b68aa8c6408809b5af9e7496b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6144609158997172812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,6 +2617,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8800703413080398617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2449886740155447048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61fb8044914e144eb1240c5a09a3942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
