@@ -118,7 +118,7 @@ public class HomePlayerMovement : MonoBehaviour
 
         // 페이드 아웃 후 추가적인 동작이 필요하다면 여기에 추가
         // 예를 들어, 씬 전환 또는 다른 동작
-        //DataManager.Instance.Day++;
+        DataManager.Instance.Day++;
         isSleeping = false;
         animator.SetBool("Sleep", false);
         yield return StartCoroutine(FadeIn());
