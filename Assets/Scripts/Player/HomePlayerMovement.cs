@@ -44,6 +44,7 @@ public class HomePlayerMovement : MonoBehaviour
             sayBedThing.SetActive(true);
 
 
+
         }
         else if (!bedTrigger)
         {
@@ -52,7 +53,6 @@ public class HomePlayerMovement : MonoBehaviour
         if (bedTrigger && Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(TriggerSleep());  // Sleep 상태 트리거 및 페이드 아웃 코루틴 호출
-            animator.SetBool("Sleep", true);
             bedTrigger = false;
 
         }
@@ -78,7 +78,7 @@ public class HomePlayerMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bed"))
+        if (!isSleeping && other.CompareTag("Bed"))
         {
             bedTrigger = true;
         }
@@ -86,16 +86,14 @@ public class HomePlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene("Out");
         }
-
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Bed"))
+        if (!isSleeping && other.CompareTag("Bed"))
         {
             bedTrigger = true;
         }
-
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -104,17 +102,29 @@ public class HomePlayerMovement : MonoBehaviour
         {
             bedTrigger = false;
         }
-
     }
 
     IEnumerator TriggerSleep()
     {
-        transform.position = spawnPositionObject.transform.position;
-        isSleeping = true;  // Sleep 상태로 설정
-        animator.SetBool("Sleep", true);
+        isSleeping = true; // Sleep 상태로 설정
         bedTrigger = false;
+        transform.position = spawnPositionObject.transform.position;
+        animator.SetBool("Sleep", true);
 
         fadeOutImage.gameObject.SetActive(true);  // 페이드 아웃 이미지 활성화
+        yield return StartCoroutine(FadeOut());
+        yield return new WaitForSeconds(1f);  // 페이드 아웃 후 대기 시간 추가
+
+
+        // 페이드 아웃 후 추가적인 동작이 필요하다면 여기에 추가
+        // 예를 들어, 씬 전환 또는 다른 동작
+        //DataManager.Instance.Day++;
+        isSleeping = false;
+        animator.SetBool("Sleep", false);
+        yield return StartCoroutine(FadeIn());
+    }
+    IEnumerator FadeOut()
+    {
         float elapsedTime = 0f;
         Color color = fadeOutImage.color;
 
@@ -128,11 +138,24 @@ public class HomePlayerMovement : MonoBehaviour
 
         color.a = 1f;
         fadeOutImage.color = color;
+    }
 
-        // 페이드 아웃 후 추가적인 동작이 필요하다면 여기에 추가
-        // 예를 들어, 씬 전환 또는 다른 동작
+    IEnumerator FadeIn()
+    {
+        float elapsedTime = 0f;
+        Color color = fadeOutImage.color;
 
-        // 페이드 아웃 완료 후 Sleep 상태 유지 또는 필요한 동작 추가
+        while (elapsedTime < fadeDuration)
+        {
+            color.a = 1f - Mathf.Clamp01(elapsedTime / fadeDuration);
+            fadeOutImage.color = color;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        color.a = 0f;
+        fadeOutImage.color = color;
+        fadeOutImage.gameObject.SetActive(false);  // 페이드 아웃 이미지 비활성화
     }
 
 }
