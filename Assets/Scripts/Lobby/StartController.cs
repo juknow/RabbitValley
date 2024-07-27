@@ -17,6 +17,7 @@ public class StartController : MonoBehaviour
     public void GameStart()
     {
         DataManager.Instance.Day = 1;
+        DataManager.Instance.Money = 0;
         SceneManager.LoadScene("Home");
     }
     public void GameQuit()

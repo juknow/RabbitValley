@@ -8,11 +8,11 @@ public class DayText : MonoBehaviour
 
 
     void Start()
-    { dayText.text = "Day" + DataManager.Instance.Day; }
+    { dayText.text = "Day " + DataManager.Instance.Day; }
 
 
     void Update()
     {
-        dayText.text = "Day" + DataManager.Instance.Day;
+        dayText.text = "Day " + DataManager.Instance.Day;
     }
 }
