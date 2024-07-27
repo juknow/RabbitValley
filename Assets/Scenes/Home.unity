@@ -1745,7 +1745,7 @@ Transform:
   m_GameObject: {fileID: 1909276392}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.463, y: 1.501, z: -9.9088335}
+  m_LocalPosition: {x: -4.85, y: 1.501, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2643,6 +2643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sayBedThing: {fileID: 563198140}
+  spawnPositionObject: {fileID: 1909276392}
   fadeOutImage: {fileID: 558234929}
 --- !u!95 &8800703413080398618
 Animator:

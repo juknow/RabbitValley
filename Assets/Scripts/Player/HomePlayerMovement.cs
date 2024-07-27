@@ -13,7 +13,7 @@ public class HomePlayerMovement : MonoBehaviour
     private float moveSpeed = 5f;
     private Vector3 originalScale;
 
-    public GameObject sayBedThing;
+    public GameObject sayBedThing, spawnPositionObject;
 
     private Animator animator;
 
@@ -109,6 +109,7 @@ public class HomePlayerMovement : MonoBehaviour
 
     IEnumerator TriggerSleep()
     {
+        transform.position = spawnPositionObject.transform.position;
         isSleeping = true;  // Sleep 상태로 설정
         animator.SetBool("Sleep", true);
         bedTrigger = false;
