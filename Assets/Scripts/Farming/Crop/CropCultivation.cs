@@ -9,8 +9,6 @@ public class CropCultivation : MonoBehaviour
     private GameObject seed, stem, sprout_1, sprout_2, baby_1, baby_2, complete;
     void Start()
     {
-        DataManager.Instance.GreatLevel = 0;
-        DataManager.Instance.CropLevel = 0;
         // 자식 오브젝트 찾기
         seed = transform.Find("seed").gameObject;
         stem = transform.Find("stem").gameObject;

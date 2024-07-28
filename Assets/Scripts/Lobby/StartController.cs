@@ -16,6 +16,8 @@ public class StartController : MonoBehaviour
 
     public void GameStart()
     {
+        DataManager.Instance.GreatLevel = 0;
+        DataManager.Instance.CropLevel = 0;
         DataManager.Instance.Day = 1;
         DataManager.Instance.Money = 0;
         DataManager.Instance.Apple = 0;
