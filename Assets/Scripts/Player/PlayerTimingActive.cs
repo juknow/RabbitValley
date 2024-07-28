@@ -55,6 +55,7 @@ public class PlayerTimingActive : MonoBehaviour
             Instantiate(timingBar, spawnObject.transform.position, quaternion.identity);
             cultivation = false;
             DataManager.Instance.GreatTrigger = true;
+            DataManager.Instance.Mana--;
 
         }
 
