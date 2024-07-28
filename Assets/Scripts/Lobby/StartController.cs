@@ -19,7 +19,8 @@ public class StartController : MonoBehaviour
         DataManager.Instance.GreatLevel = 0;
         DataManager.Instance.CropLevel = 0;
         DataManager.Instance.Day = 1;
-        DataManager.Instance.Money = 10000;
+        //DataManager.Instance.Money = 10000;
+        DataManager.Instance.Money = 50000000;
         DataManager.Instance.Apple = 0;
         DataManager.Instance.Grape = 0;
         DataManager.Instance.Mango = 0;

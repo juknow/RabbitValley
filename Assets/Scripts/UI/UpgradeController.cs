@@ -21,6 +21,7 @@ public class UpgradeController : MonoBehaviour
         if (DataManager.Instance.Money >= 20000)
         {
             DataManager.Instance.Money -= 20000;
+            DataManager.Instance.Mana++;
             DataManager.Instance.MaxMana++;
         }
     }
@@ -30,6 +31,13 @@ public class UpgradeController : MonoBehaviour
         {
             DataManager.Instance.Money -= 20000;
             DataManager.Instance.Cultivation++;
+        }
+    }
+    public void HatUpgrade()
+    {
+        if (DataManager.Instance.Money >= 5000000)
+        {
+            //DataManager.Instance.Money -= 50000;
         }
     }
 }
