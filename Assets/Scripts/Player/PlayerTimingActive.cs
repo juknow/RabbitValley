@@ -62,7 +62,7 @@ public class PlayerTimingActive : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!DataManager.Instance.GreatTrigger && other.CompareTag("Crop"))
+        if (DataManager.Instance.Mana > 0 && !DataManager.Instance.GreatTrigger && other.CompareTag("Crop"))
         {
             cultivation = true;
         }
@@ -70,7 +70,7 @@ public class PlayerTimingActive : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (!DataManager.Instance.GreatTrigger && other.CompareTag("Crop"))
+        if (DataManager.Instance.Mana > 0 && !DataManager.Instance.GreatTrigger && other.CompareTag("Crop"))
         {
             cultivation = true;
         }

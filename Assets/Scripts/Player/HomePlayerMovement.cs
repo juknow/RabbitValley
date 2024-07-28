@@ -86,7 +86,7 @@ public class HomePlayerMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isSleeping && other.CompareTag("Bed"))
+        if (DataManager.Instance.Mana <= 0 && !isSleeping && other.CompareTag("Bed"))
         {
             bedTrigger = true;
         }
@@ -98,7 +98,7 @@ public class HomePlayerMovement : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (!isSleeping && other.CompareTag("Bed"))
+        if (DataManager.Instance.Mana <= 0 && !isSleeping && other.CompareTag("Bed"))
         {
             bedTrigger = true;
         }
@@ -127,6 +127,7 @@ public class HomePlayerMovement : MonoBehaviour
         // 페이드 아웃 후 추가적인 동작이 필요하다면 여기에 추가
         // 예를 들어, 씬 전환 또는 다른 동작
         DataManager.Instance.Day++;
+        DataManager.Instance.Mana = DataManager.Instance.MaxMana;
         isSleeping = false;
         animator.SetBool("Sleep", false);
         yield return StartCoroutine(FadeIn());

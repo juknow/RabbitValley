@@ -21,7 +21,8 @@ public class StartController : MonoBehaviour
         DataManager.Instance.Apple = 0;
         DataManager.Instance.Grape = 0;
         DataManager.Instance.Mango = 0;
-        DataManager.Instance.Mana = 1;
+        DataManager.Instance.MaxMana = 2;
+        DataManager.Instance.Mana = 2;
         SceneManager.LoadScene("Home");
     }
     public void GameQuit()
