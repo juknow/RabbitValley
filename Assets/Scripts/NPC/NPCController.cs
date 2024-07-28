@@ -28,21 +28,24 @@ public class NPCController : MonoBehaviour
             sayGiveThing.SetActive(false);
         }
 
-        if (giveTrigger && DataManager.Instance.Fruit == 1 && Input.GetKeyDown(KeyCode.Space))
+        if (DataManager.Instance.Apple > 0 && giveTrigger && DataManager.Instance.Fruit == 1 && Input.GetKeyDown(KeyCode.Space))
         {
             DataManager.Instance.Fruit = 0;
+            DataManager.Instance.Apple -= 1;
             DataManager.Instance.Money += 10000;
             giveTrigger = false;
         }
-        else if (giveTrigger && DataManager.Instance.Fruit == 2 && Input.GetKeyDown(KeyCode.Space))
+        else if (DataManager.Instance.Mango > 0 && giveTrigger && DataManager.Instance.Fruit == 2 && Input.GetKeyDown(KeyCode.Space))
         {
             DataManager.Instance.Fruit = 0;
+            DataManager.Instance.Mango -= 1;
             DataManager.Instance.Money += 5000;
             giveTrigger = false;
         }
-        else if (giveTrigger && DataManager.Instance.Fruit == 3 && Input.GetKeyDown(KeyCode.Space))
+        else if (DataManager.Instance.Grape > 0 && giveTrigger && DataManager.Instance.Fruit == 3 && Input.GetKeyDown(KeyCode.Space))
         {
             DataManager.Instance.Fruit = 0;
+            DataManager.Instance.Grape -= 1;
             DataManager.Instance.Money += 3000;
             giveTrigger = false;
         }

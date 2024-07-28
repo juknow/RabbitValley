@@ -25,21 +25,21 @@ public class ValleyPlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (DataManager.Instance.Fruit == 1)
+        if (DataManager.Instance.Apple > 0 && DataManager.Instance.Fruit == 1)
         {
             apple.SetActive(true);
             mango.SetActive(false);
             grape.SetActive(false);
 
         }
-        else if (DataManager.Instance.Fruit == 2)
+        else if (DataManager.Instance.Mango > 0 && DataManager.Instance.Fruit == 2)
         {
             apple.SetActive(false);
             mango.SetActive(true);
             grape.SetActive(false);
 
         }
-        else if (DataManager.Instance.Fruit == 3)
+        else if (DataManager.Instance.Grape > 0 && DataManager.Instance.Fruit == 3)
         {
             apple.SetActive(false);
             mango.SetActive(false);

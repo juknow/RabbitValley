@@ -50,8 +50,8 @@ public class DataManager : MonoBehaviour
     }
     public int Grape
     {
-        get { return mango; }
-        set { mango = value; }
+        get { return grape; }
+        set { grape = value; }
     }
     public bool GreatTrigger
     {

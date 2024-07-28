@@ -107,6 +107,20 @@ public class CropCultivation : MonoBehaviour
                 complete.SetActive(true);
                 DataManager.Instance.CropLevel = 0;
                 DataManager.Instance.GreatLevel = 0;
+                // 랜덤으로 Apple, Mango, Grape 중 하나를 증가시킴
+                int randomFruit = Random.Range(0, 3);
+                switch (randomFruit)
+                {
+                    case 0:
+                        DataManager.Instance.Apple++;
+                        break;
+                    case 1:
+                        DataManager.Instance.Mango++;
+                        break;
+                    case 2:
+                        DataManager.Instance.Grape++;
+                        break;
+                }
                 break;
         }
     }
