@@ -5,11 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class ValleyPlayerMovement : MonoBehaviour
 {
     private float moveSpeed = 5f;
     private Vector3 originalScale;
     public GameObject apple, mango, grape;
+    public Canvas canvas; // Reference to the Canvas
+
 
     void Start()
     {
@@ -25,6 +28,12 @@ public class ValleyPlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Toggle the canvas visibility when Tab is pressed
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            canvas.gameObject.SetActive(!canvas.gameObject.activeSelf);
+        }
+
         if (DataManager.Instance.Apple > 0 && DataManager.Instance.Fruit == 1)
         {
             apple.SetActive(true);

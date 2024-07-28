@@ -25,6 +25,8 @@ public class HomePlayerMovement : MonoBehaviour
 
     private bool isSleeping = false;
 
+    public Canvas canvas; // Reference to the Canvas
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -38,6 +40,12 @@ public class HomePlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Toggle the canvas visibility when Tab is pressed
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            canvas.gameObject.SetActive(!canvas.gameObject.activeSelf);
+        }
+
         if (isSleeping) return; // Sleep 상태라면 움직임을 막음
         if (bedTrigger)
         {

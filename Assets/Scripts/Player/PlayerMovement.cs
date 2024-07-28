@@ -5,8 +5,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerMovement : MonoBehaviour
 {
+
+    public Canvas canvas; // Reference to the Canvas
 
 
     private float moveSpeed = 5f;
@@ -20,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Toggle the canvas visibility when Tab is pressed
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            canvas.gameObject.SetActive(!canvas.gameObject.activeSelf);
+        }
 
         // 입력 처리
         float moveX = Input.GetAxis("Horizontal");
