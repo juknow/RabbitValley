@@ -128,6 +128,7 @@ public class HomePlayerMovement : MonoBehaviour
         // 예를 들어, 씬 전환 또는 다른 동작
         DataManager.Instance.Day++;
         DataManager.Instance.Mana = DataManager.Instance.MaxMana;
+        DataManager.Instance.Money -= 1000;
         isSleeping = false;
         animator.SetBool("Sleep", false);
         yield return StartCoroutine(FadeIn());

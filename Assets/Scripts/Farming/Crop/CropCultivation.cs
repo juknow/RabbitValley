@@ -110,15 +110,17 @@ public class CropCultivation : MonoBehaviour
                 switch (randomFruit)
                 {
                     case 0:
-                        DataManager.Instance.Apple++;
+                        DataManager.Instance.Apple += DataManager.Instance.Cultivation;
                         break;
                     case 1:
-                        DataManager.Instance.Mango++;
+                        DataManager.Instance.Mango += DataManager.Instance.Cultivation;
                         break;
                     case 2:
-                        DataManager.Instance.Grape++;
+                        DataManager.Instance.Grape += DataManager.Instance.Cultivation;
                         break;
                 }
+                DataManager.Instance.GreatLevel = 0;
+                DataManager.Instance.CropLevel = 0;
                 break;
         }
     }

@@ -52,6 +52,10 @@ public class PlayerTimingActive : MonoBehaviour
         }
         if (!DataManager.Instance.GreatTrigger && cultivation && Input.GetKeyDown(KeyCode.Space))
         {
+            if (DataManager.Instance.CropLevel <= 0)
+            {
+                DataManager.Instance.Money -= 1000;
+            }
             Instantiate(timingBar, spawnObject.transform.position, quaternion.identity);
             cultivation = false;
             DataManager.Instance.GreatTrigger = true;
