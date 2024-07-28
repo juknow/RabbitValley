@@ -7,19 +7,52 @@ using UnityEngine.SceneManagement;
 
 public class ValleyPlayerMovement : MonoBehaviour
 {
-
-
     private float moveSpeed = 5f;
     private Vector3 originalScale;
+    public GameObject apple, mango, grape;
 
     void Start()
     {
         // 원래의 로컬 스케일 저장
         originalScale = transform.localScale;
+
+        // 모든 과일 비활성화
+        apple.SetActive(false);
+        mango.SetActive(false);
+        grape.SetActive(false);
+        DataManager.Instance.Fruit = 0;
     }
 
     void Update()
     {
+        if (DataManager.Instance.Fruit == 1)
+        {
+            apple.SetActive(true);
+            mango.SetActive(false);
+            grape.SetActive(false);
+
+        }
+        else if (DataManager.Instance.Fruit == 2)
+        {
+            apple.SetActive(false);
+            mango.SetActive(true);
+            grape.SetActive(false);
+
+        }
+        else if (DataManager.Instance.Fruit == 3)
+        {
+            apple.SetActive(false);
+            mango.SetActive(false);
+            grape.SetActive(true);
+
+        }
+        else
+        {
+            apple.SetActive(false);
+            mango.SetActive(false);
+            grape.SetActive(false);
+        }
+
 
         // 입력 처리
         float moveX = Input.GetAxis("Horizontal");
@@ -41,8 +74,21 @@ public class ValleyPlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z); // 왼쪽으로 이동 중
         }
 
-
+        // 키 입력 처리
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            DataManager.Instance.Fruit = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            DataManager.Instance.Fruit = 2;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            DataManager.Instance.Fruit = 3;
+        }
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Portal"))
@@ -50,6 +96,4 @@ public class ValleyPlayerMovement : MonoBehaviour
             SceneManager.LoadScene("Out");
         }
     }
-
-
 }

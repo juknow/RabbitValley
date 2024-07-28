@@ -8,11 +8,11 @@ public class MoneyText : MonoBehaviour
 
 
     void Start()
-    { dayText.text = "Money : " + DataManager.Instance.Day; }
+    { dayText.text = "Money : " + DataManager.Instance.Money; }
 
 
     void Update()
     {
-        dayText.text = "Money : " + DataManager.Instance.Day;
+        dayText.text = "Money : " + DataManager.Instance.Money;
     }
 }
