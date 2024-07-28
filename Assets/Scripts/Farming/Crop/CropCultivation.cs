@@ -95,7 +95,7 @@ public class CropCultivation : MonoBehaviour
                 baby_2.SetActive(true);
                 complete.SetActive(false);
                 break;
-            case (7):
+            case (>= 7):
                 seed.SetActive(false);
                 stem.SetActive(false);
                 sprout_1.SetActive(false);
