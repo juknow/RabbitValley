@@ -9,6 +9,8 @@ public class DataManager : MonoBehaviour
     private int cropLevel;
     private int greatLevel;
     private int day, money, fruit, apple, mango, grape, mana, maxMana, cultivation;
+
+    private int appleValue, mangoValue, grapeValue;
     private bool greatTrigger, sayGreat, sayClose;
 
     // getset 에 접근하게 해주는 프로퍼티
@@ -68,6 +70,23 @@ public class DataManager : MonoBehaviour
     {
         get { return cultivation; }
         set { cultivation = value; }
+    }
+
+    public int AppleValue
+    {
+        get { return appleValue; }
+        set { appleValue = value; }
+    }
+    public int MangoValue
+    {
+        get { return mangoValue; }
+        set { mangoValue = value; }
+    }
+
+    public int GrapeValue
+    {
+        get { return grapeValue; }
+        set { grapeValue = value; }
     }
 
     public bool GreatTrigger

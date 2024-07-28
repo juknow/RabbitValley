@@ -32,21 +32,21 @@ public class NPCController : MonoBehaviour
         {
             DataManager.Instance.Fruit = 0;
             DataManager.Instance.Apple -= 1;
-            DataManager.Instance.Money += 10000;
+            DataManager.Instance.Money += DataManager.Instance.AppleValue;
             giveTrigger = false;
         }
         else if (DataManager.Instance.Mango > 0 && giveTrigger && DataManager.Instance.Fruit == 2 && Input.GetKeyDown(KeyCode.Space))
         {
             DataManager.Instance.Fruit = 0;
             DataManager.Instance.Mango -= 1;
-            DataManager.Instance.Money += 5000;
+            DataManager.Instance.Money += DataManager.Instance.MangoValue;
             giveTrigger = false;
         }
         else if (DataManager.Instance.Grape > 0 && giveTrigger && DataManager.Instance.Fruit == 3 && Input.GetKeyDown(KeyCode.Space))
         {
             DataManager.Instance.Fruit = 0;
             DataManager.Instance.Grape -= 1;
-            DataManager.Instance.Money += 3000;
+            DataManager.Instance.Money += DataManager.Instance.GrapeValue;
             giveTrigger = false;
         }
     }

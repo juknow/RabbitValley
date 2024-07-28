@@ -1223,7 +1223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4805039848317352922
 Transform:
   m_ObjectHideFlags: 0
@@ -1260,6 +1260,7 @@ GameObject:
   - component: {fileID: 5125058316290964298}
   - component: {fileID: 8582671837338612903}
   - component: {fileID: 6067317117501469814}
+  - component: {fileID: 5506247285202191333}
   m_Layer: 5
   m_Name: mango
   m_TagString: Untagged
@@ -1383,6 +1384,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5506247285202191333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580378929568876993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883fe55f17b6d904e97809d48690706a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayText: {fileID: 6067317117501469814}
 --- !u!1 &4622661921622044422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2269,7 @@ GameObject:
   - component: {fileID: 5787854805683042956}
   - component: {fileID: 4568637644493512931}
   - component: {fileID: 7061736282762762110}
+  - component: {fileID: 3363937387489460850}
   m_Layer: 5
   m_Name: grape
   m_TagString: Untagged
@@ -2378,6 +2393,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3363937387489460850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7456457746075154584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be001a7765a5b57488d58e6584e9518f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayText: {fileID: 7061736282762762110}
 --- !u!1 &7701999952075751499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,6 +2740,7 @@ GameObject:
   - component: {fileID: 7222056173633205613}
   - component: {fileID: 7054256957541957891}
   - component: {fileID: 184312207409920588}
+  - component: {fileID: 8490644324691458973}
   m_Layer: 5
   m_Name: apple
   m_TagString: Untagged
@@ -2835,6 +2864,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8490644324691458973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122149873958144505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9ae77ef43a97940bf7d3e4c1957569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayText: {fileID: 184312207409920588}
 --- !u!1 &8169591431261933514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,7 +3026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6612159148552115025
 Transform:
   m_ObjectHideFlags: 0

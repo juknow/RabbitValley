@@ -27,6 +27,9 @@ public class StartController : MonoBehaviour
         DataManager.Instance.MaxMana = 2;
         DataManager.Instance.Mana = 2;
         DataManager.Instance.Cultivation = 1;
+        DataManager.Instance.AppleValue = 6000;
+        DataManager.Instance.MangoValue = 6000;
+        DataManager.Instance.GrapeValue = 6000;
         SceneManager.LoadScene("Home");
     }
     public void GameQuit()
