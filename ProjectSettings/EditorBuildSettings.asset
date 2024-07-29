@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Valley.unity
     guid: 3cd661a1596036847b51f00e8a6454e4
+  - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: 4af1997e51c6ecb42a4e6f3660f68e6e
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: e90f6ec91f7b19245bfc08e2c4c05b7d
   m_configObjects: {}

@@ -20,7 +20,7 @@ public class StartController : MonoBehaviour
         DataManager.Instance.CropLevel = 0;
         DataManager.Instance.Day = 1;
         //DataManager.Instance.Money = 10000;
-        DataManager.Instance.Money = 50000000;
+        DataManager.Instance.Money = 100000000;
         DataManager.Instance.Apple = 0;
         DataManager.Instance.Grape = 0;
         DataManager.Instance.Mango = 0;
@@ -42,6 +42,10 @@ public class StartController : MonoBehaviour
     public void GameQuit()
     {
         Application.Quit();
+    }
+    public void BacktoLobby()
+    {
+        SceneManager.LoadScene("Lobby");
     }
 
 

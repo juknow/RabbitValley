@@ -30,7 +30,7 @@ public class NPCController : MonoBehaviour
 
     void Update()
     {
-        if (DataManager.Instance.Heart >= 255)
+        if (DataManager.Instance.Heart >= 100)
         {
             SceneManager.LoadScene("GameWin");
         }
@@ -96,7 +96,7 @@ public class NPCController : MonoBehaviour
 
     void UpdateColorBasedOnHeart()
     {
-        int maxHeart = 255; // 최대 Heart 값 설정
+        int maxHeart = 100; // 최대 Heart 값 설정
         float t = Mathf.Clamp01((float)DataManager.Instance.Heart / maxHeart);
 
         // Eyes: 기본 색상에서 검은색으로 전환
