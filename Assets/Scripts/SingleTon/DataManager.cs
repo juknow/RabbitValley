@@ -12,7 +12,7 @@ public class DataManager : MonoBehaviour
 
     private int wave, appleWave, mangoWave, grapeWave;
     private int appleValue, mangoValue, grapeValue;
-    private bool greatTrigger, sayGreat, sayClose;
+    private bool greatTrigger, sayGreat, sayClose, hat;
 
     // getset 에 접근하게 해주는 프로퍼티
 
@@ -156,6 +156,11 @@ public class DataManager : MonoBehaviour
     {
         get { return sayClose; }
         set { sayClose = value; }
+    }
+    public bool Hat
+    {
+        get { return hat; }
+        set { hat = value; }
     }
 
 

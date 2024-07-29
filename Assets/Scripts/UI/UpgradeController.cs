@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UpgradeController : MonoBehaviour
 {
+    public GameObject HatButton;
     void Start()
     {
 
@@ -12,7 +13,10 @@ public class UpgradeController : MonoBehaviour
 
     void Update()
     {
-
+        if (DataManager.Instance.Hat)
+        {
+            HatButton.SetActive(false);
+        }
 
     }
 
@@ -35,8 +39,10 @@ public class UpgradeController : MonoBehaviour
     }
     public void HatUpgrade()
     {
-        if (DataManager.Instance.Money >= 5000000)
+        if (!DataManager.Instance.Hat && DataManager.Instance.Money >= 50000)
         {
+            DataManager.Instance.Money -= 50000;
+            DataManager.Instance.Hat = true;
             //DataManager.Instance.Money -= 50000;
         }
     }
