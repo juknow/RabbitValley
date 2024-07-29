@@ -55,6 +55,8 @@ public class PlayerTimingActive : MonoBehaviour
             if (DataManager.Instance.CropLevel <= 0)
             {
                 DataManager.Instance.Money -= 1000;
+                DataManager.Instance.Fruitselect = UnityEngine.Random.Range(1, 4);
+                Debug.Log(DataManager.Instance.Fruitselect);
             }
             Instantiate(timingBar, spawnObject.transform.position, quaternion.identity);
             cultivation = false;

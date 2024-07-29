@@ -8,7 +8,7 @@ public class DataManager : MonoBehaviour
     public static DataManager Instance { get; private set; }
     private int cropLevel;
     private int greatLevel;
-    private int day, money, fruit, apple, mango, grape, mana, maxMana, cultivation;
+    private int day, money, fruit, apple, mango, grape, mana, maxMana, cultivation, fruitselect;
 
     private int appleValue, mangoValue, grapeValue;
     private bool greatTrigger, sayGreat, sayClose;
@@ -88,6 +88,12 @@ public class DataManager : MonoBehaviour
         get { return grapeValue; }
         set { grapeValue = value; }
     }
+    public int Fruitselect
+    {
+        get { return fruitselect; }
+        set { fruitselect = value; }
+    }
+
 
     public bool GreatTrigger
     {

@@ -30,6 +30,7 @@ public class StartController : MonoBehaviour
         DataManager.Instance.AppleValue = 6000;
         DataManager.Instance.MangoValue = 6000;
         DataManager.Instance.GrapeValue = 6000;
+        DataManager.Instance.Fruitselect = 0;
         SceneManager.LoadScene("Home");
     }
     public void GameQuit()
