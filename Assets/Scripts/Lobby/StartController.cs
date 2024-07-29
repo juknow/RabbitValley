@@ -36,6 +36,7 @@ public class StartController : MonoBehaviour
         DataManager.Instance.MangoWave = 6000;
         DataManager.Instance.GrapeWave = 6000;
         DataManager.Instance.Hat = false;
+        DataManager.Instance.Heart = 0;
         SceneManager.LoadScene("Home");
     }
     public void GameQuit()

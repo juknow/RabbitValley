@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class DataManager : MonoBehaviour
     private int wave, appleWave, mangoWave, grapeWave;
     private int appleValue, mangoValue, grapeValue;
     private bool greatTrigger, sayGreat, sayClose, hat;
+    private int heart;
 
     // getset 에 접근하게 해주는 프로퍼티
 
@@ -31,10 +33,22 @@ public class DataManager : MonoBehaviour
         get { return day; }
         set { day = value; }
     }
+    public int Heart
+    {
+        get { return heart; }
+        set { heart = value; }
+    }
     public int Money
     {
         get { return money; }
-        set { money = value; }
+        set
+        {
+            money = value;
+            if (money < 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+        }
     }
     public int Fruit
     {
