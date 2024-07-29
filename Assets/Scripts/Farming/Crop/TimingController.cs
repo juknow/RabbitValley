@@ -6,14 +6,16 @@ public class TimingController : MonoBehaviour
 
     public GameObject spawnObject;
     private Vector3 move;
-    private float speed = 1f; // 초기 속도
-    private float acceleration = 0.01f; // 가속도
+    private float speed; // 초기 속도
+    private float acceleration; // 가속도
     private bool good;
 
     void Start()
     {
         good = false;
         move = new Vector3(1f, 0, 0);
+        // 초기 속도와 가속도를 CropLevel에 따라 설정
+        SetSpeedAndAcceleration(DataManager.Instance.CropLevel);
     }
 
     void Update()
@@ -66,5 +68,13 @@ public class TimingController : MonoBehaviour
         {
             good = false;
         }
+    }
+
+    private void SetSpeedAndAcceleration(int cropLevel)
+    {
+        // 예시로 CropLevel에 따라 속도와 가속도를 다르게 설정합니다.
+        // 필요에 따라 이 값을 조정하세요.
+        speed = 0.7f + 0.2f * cropLevel; // CropLevel에 따라 속도를 증가
+        acceleration = 0.01f + 0.01f * cropLevel; // CropLevel에 따라 가속도를 증가
     }
 }

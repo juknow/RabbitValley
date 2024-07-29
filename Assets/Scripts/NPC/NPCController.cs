@@ -52,7 +52,7 @@ public class NPCController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if ((DataManager.Instance.Apple > 0 || DataManager.Instance.Mango > 0 || DataManager.Instance.Grape > 0) && other.CompareTag("Player"))
         {
             giveTrigger = true;
         }
@@ -60,7 +60,7 @@ public class NPCController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if ((DataManager.Instance.Apple > 0 || DataManager.Instance.Mango > 0 || DataManager.Instance.Grape > 0) && other.CompareTag("Player"))
         {
             giveTrigger = true;
         }

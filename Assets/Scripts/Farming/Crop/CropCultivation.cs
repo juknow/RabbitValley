@@ -270,18 +270,30 @@ public class CropCultivation : MonoBehaviour
                 }
                 break;
             case (>= 8):
+                int additionalHarvest = 0;
+
+                for (int i = 0; i < DataManager.Instance.GreatLevel; i++)
+                {
+
+                    if (Random.Range(0, 4) == 1) // 50% 확률로 추가 수확량 증가
+                    {
+                        additionalHarvest += 1; // 기본 수확량의 절반을 추가로 얻음
+                    }
+
+                }
                 switch (DataManager.Instance.Fruitselect)
                 {
                     case 1:
-                        DataManager.Instance.Apple += DataManager.Instance.Cultivation;
+                        DataManager.Instance.Apple += (DataManager.Instance.Cultivation + additionalHarvest);
                         break;
                     case 2:
-                        DataManager.Instance.Mango += DataManager.Instance.Cultivation;
+                        DataManager.Instance.Mango += (DataManager.Instance.Cultivation + additionalHarvest);
                         break;
                     case 3:
-                        DataManager.Instance.Grape += DataManager.Instance.Cultivation;
+                        DataManager.Instance.Grape += (DataManager.Instance.Cultivation + additionalHarvest);
                         break;
                 }
+
                 DataManager.Instance.GreatLevel = 0;
                 DataManager.Instance.CropLevel = 0;
                 break;

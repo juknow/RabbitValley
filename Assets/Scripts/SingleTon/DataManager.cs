@@ -10,6 +10,7 @@ public class DataManager : MonoBehaviour
     private int greatLevel;
     private int day, money, fruit, apple, mango, grape, mana, maxMana, cultivation, fruitselect;
 
+    private int wave, appleWave, mangoWave, grapeWave;
     private int appleValue, mangoValue, grapeValue;
     private bool greatTrigger, sayGreat, sayClose;
 
@@ -92,6 +93,50 @@ public class DataManager : MonoBehaviour
     {
         get { return fruitselect; }
         set { fruitselect = value; }
+    }
+    public int Wave
+    {
+        get
+        {
+            return wave;
+        }
+        set
+        {
+            wave = value;
+        }
+    }
+    public int AppleWave
+    {
+        get
+        {
+            return appleWave;
+        }
+        set
+        {
+            appleWave = value;
+        }
+    }
+    public int MangoWave
+    {
+        get
+        {
+            return mangoWave;
+        }
+        set
+        {
+            mangoWave = value;
+        }
+    }
+    public int GrapeWave
+    {
+        get
+        {
+            return grapeWave;
+        }
+        set
+        {
+            grapeWave = value;
+        }
     }
 
 

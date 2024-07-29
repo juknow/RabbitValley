@@ -126,6 +126,8 @@ public class HomePlayerMovement : MonoBehaviour
 
         // 페이드 아웃 후 추가적인 동작이 필요하다면 여기에 추가
         // 예를 들어, 씬 전환 또는 다른 동작
+        // 랜덤하게 과일 값을 조정
+        AdjustFruitValues();
         DataManager.Instance.Day++;
         DataManager.Instance.Mana = DataManager.Instance.MaxMana;
         DataManager.Instance.Money -= 1000;
@@ -166,6 +168,44 @@ public class HomePlayerMovement : MonoBehaviour
         color.a = 0f;
         fadeOutImage.color = color;
         fadeOutImage.gameObject.SetActive(false);  // 페이드 아웃 이미지 비활성화
+    }
+    void AdjustFruitValues()
+    {
+        DataManager.Instance.AppleWave = DataManager.Instance.AppleValue;
+        DataManager.Instance.MangoWave = DataManager.Instance.MangoValue;
+        DataManager.Instance.GrapeWave = DataManager.Instance.GrapeValue;
+        // 과일 종류를 배열로 정의
+        string[] fruits = { "AppleValue", "MangoValue", "GrapeValue" };
+
+        // 무작위로 선택한 과일 인덱스
+        int indexToDouble = UnityEngine.Random.Range(0, fruits.Length);
+        DataManager.Instance.Wave = UnityEngine.Random.Range(150, 401);
+
+        // 과일 값 변경
+        for (int i = 0; i < fruits.Length; i++)
+        {
+            switch (fruits[i])
+            {
+                case "AppleValue":
+                    if (i == indexToDouble)
+                        DataManager.Instance.AppleValue += 2 * DataManager.Instance.Wave;
+                    else
+                        DataManager.Instance.AppleValue -= DataManager.Instance.Wave;
+                    break;
+                case "MangoValue":
+                    if (i == indexToDouble)
+                        DataManager.Instance.MangoValue += 2 * DataManager.Instance.Wave;
+                    else
+                        DataManager.Instance.MangoValue -= DataManager.Instance.Wave;
+                    break;
+                case "GrapeValue":
+                    if (i == indexToDouble)
+                        DataManager.Instance.GrapeValue += 2 * DataManager.Instance.Wave;
+                    else
+                        DataManager.Instance.GrapeValue -= DataManager.Instance.Wave;
+                    break;
+            }
+        }
     }
 
 }
