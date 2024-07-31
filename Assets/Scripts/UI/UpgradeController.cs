@@ -22,18 +22,18 @@ public class UpgradeController : MonoBehaviour
 
     public void EnergyUpgrade()
     {
-        if (DataManager.Instance.Money >= 20000)
+        if (DataManager.Instance.Money >= 11000)
         {
-            DataManager.Instance.Money -= 20000;
+            DataManager.Instance.Money -= 11000;
             DataManager.Instance.Mana++;
             DataManager.Instance.MaxMana++;
         }
     }
     public void CultivationUpgrade()
     {
-        if (DataManager.Instance.Money >= 20000)
+        if (DataManager.Instance.Money >= 15000)
         {
-            DataManager.Instance.Money -= 20000;
+            DataManager.Instance.Money -= 15000;
             DataManager.Instance.Cultivation++;
         }
     }
